@@ -1,0 +1,45 @@
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.card {
+  width: 90%; /* Adjust width as needed */
+  max-width: 250px; /* Set maximum width */
+  border: 2px solid black;
+  padding: 14px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 2px black;
+  margin: 5px;
+}
+
+.card-header {
+  text-align: center;
+}
+
+.card-body {
+  text-align: left;
+}
+
+img {
+  width: 100%; /* Make images responsive */
+  max-width: 100%; /* Ensure images don't exceed container width */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 7px;
+}
+
+/* Media Query for smaller devices */
+@media screen and (max-width: 768px) {
+  .card {
+    width: 45%; /* Adjust width for smaller screens */
+    max-width: none; /* Remove maximum width */
+    margin: 5px;
+  }
+  .card-container {
+    display: flex;
+ 
+    flex-direction: column;
+    justify-content: space-around;
+  }
+}

@@ -1,0 +1,63 @@
+<style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #3E4095;
+            padding: 10px;
+        }
+
+        .items {
+            display: flex;
+            gap: 30px;
+            font-size: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 5px 0;
+        }
+
+        .Active {
+            border-bottom: 3px solid yellow;
+        }
+
+        fa-icon {
+            font-size: 20px;
+            color: white;
+        }
+</style>
+
+<div class="container">
+  <div class="nav">
+      <div class="items">
+          <a  routerLink="home"  routerLinkActive="Active">
+              <fa-icon class="iconhouse" [icon]="faHouse"></fa-icon>
+              Home
+          </a>
+          <a routerLink="aboutus"  routerLinkActive="Active">
+              <fa-icon [icon]="faBook"></fa-icon>
+              About Us
+          </a>
+          <a  routerLink="contactus"  routerLinkActive="Active">
+              <fa-icon [icon]="faAddressBook"></fa-icon>
+              Contact Us
+          </a>
+          <a  routerLink="career"  routerLinkActive="Active">
+              <fa-icon [icon]="faClock"></fa-icon>
+              Career
+          </a>
+      </div>
+  </div>
+</div>

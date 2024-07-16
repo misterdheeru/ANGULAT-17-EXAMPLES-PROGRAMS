@@ -1,0 +1,53 @@
+<style>
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: linear-gradient(to right, #fcc200 50%, #ff3939 46%);
+  }
+
+  .card {
+    width: 257px;
+    padding: 16px;
+    border: 11px solid #00dccd;
+    margin: 12px;
+    border-radius: 16px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px 1px gray;
+    background-color: azure;
+  }
+
+  .img {
+    width: 200px;
+    aspect-ratio: 5 / 6;
+    transition: transform 0.2s ease;
+  }
+
+  .img:hover {
+    transform: scale(1.1);
+  }
+</style>
+
+<div class="container">
+  <div class="card" *ngFor="let DATA of products">
+    <div
+      class="roots"
+      [routerLink]="['/singleproduct']"
+      [queryParams]="{
+        id: DATA.id,
+        title: DATA.title,
+        image: DATA.image, 
+        description: DATA.description,
+        price: DATA.price
+      }"
+    >
+      <div class="Head"></div>
+      <div class="Body">
+        <img class="img" src="{{ DATA.image }}" />
+        <h3>{{ DATA.title }}</h3>
+      </div>
+      <div class="Footer"></div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,42 @@
+ /* CSS Styles for the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  /* Styles for table header cells */
+  th {
+    background-color: #f2f2f2;
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  /* Styles for table data cells */
+  td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  /* Alternate row background color */
+  tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  /* Hover effect on rows */
+  tbody tr:hover {
+    background-color: #f2f2f2;
+  }
+  
+
+  button{
+
+    background-color: tomato;
+    color: white;
+    border: 0px;
+    border-radius: 30px;
+    padding: 5px;
+    width: 200px;
+
+  }

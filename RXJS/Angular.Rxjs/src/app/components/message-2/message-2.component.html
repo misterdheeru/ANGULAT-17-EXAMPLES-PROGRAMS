@@ -1,0 +1,27 @@
+<style>
+    
+  h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: red;
+  }
+  button {
+    background-color: rgb(25, 0, 255);
+  
+    
+    padding: 5px;
+   width: 100px;
+    color: white;
+  }
+  button:active {
+    background-color: rgb(17, 0, 147);
+    color: white;
+  }
+</style>
+<h1>MESSAGE -2</h1>
+
+<div>
+  <input type="text" #textbox /> <br>
+  <br>
+  <button (click)="send()">send</button> 
+  <button (click)="clear()">clear</button>
+</div>

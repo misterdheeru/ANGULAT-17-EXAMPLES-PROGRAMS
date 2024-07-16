@@ -1,0 +1,83 @@
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s ease;
+    }
+
+    table:hover {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    thead th {
+        background-color: #009fe3;
+        color: #ffffff;
+        font-weight: bold;
+        padding: 10px;
+        text-align: left;
+        border-bottom: 2px solid #ddd;
+        transition: background-color 0.3s ease;
+    }
+
+    tbody td {
+        padding: 8px;
+        border-bottom: 1px solid #ffffff;
+    }
+
+    tbody tr:nth-child(even) {
+        background-color: #fefcfe;
+    }
+
+    tbody tr:hover {
+        background-color: #d753ca;
+        color: white;
+        cursor: pointer;
+         
+    }
+
+    /* Animation */
+    @keyframes zoom {
+        100% {
+            transform: scale(4);
+        }
+        100% {
+            transform: scale(1.2);
+        }
+    }
+
+    tbody tr:hover td:nth-child(2) {
+        animation: zoom 0.3s ease forwards;
+    }
+</style>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>POSITION</th>
+            <th>DEPARTMENT</th>
+            <th>EMAIL</th>
+            <th>MOBILE</th>
+            <th>HIR-DATE</th>
+            <th>SALARY</th>
+            <th>GENDER</th>
+        </tr>
+    </thead>
+    <tbody>
+        <ng-container *ngFor="let Data of emp">
+            <tr>
+                <td>{{Data.id}}</td>
+                <td>{{Data.name | employees : Data.gender}}</td>
+                <td>{{Data.position}}</td>
+                <td>{{Data.department}}</td>
+                <td>{{Data.email}}</td>
+                <td>{{Data.phone}}</td>
+                <td>{{Data.hireDate}}</td>
+                <td>{{Data.salary}}</td>
+                <td>{{Data.gender}}</td>
+            </tr>
+        </ng-container>
+    </tbody>
+</table>

@@ -1,0 +1,70 @@
+<style>
+    form {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
+    p {
+        margin-bottom: 15px;
+    }
+    input {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+    input.ng-touched.ng-invalid {
+        border: solid red 2px;
+    }
+    input.ng-valid {
+        border: solid rgb(0, 255, 4) 2px;
+    }
+    input[type="submit"] {
+        background-color: #007BFF;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+    span {
+        font-size: 12px;
+        color: red;
+    }
+</style>
+
+<form [formGroup]="login" (submit)="loginuser()">
+    <p>
+        Username
+        <br>
+        <input type="text" formControlName="user">
+        <br> 
+        <span *ngIf="login.get('user')?.touched && login.get('user')?.hasError('required')">
+            Please Enter Username
+        </span>
+        <span *ngIf="login.get('user')?.touched && login.get('user')?.hasError('minlength')">
+            Please Enter more than 5 characters
+        </span>
+    </p>
+    <p>
+        Password
+        <br>
+        <input type="password" formControlName="pwd">
+        <br>
+        <span *ngIf="login.get('pwd')?.touched && login.get('pwd')?.hasError('required')">
+            Please Enter password
+        </span>
+        <span *ngIf="login.get('pwd')?.touched && login.get('pwd')?.hasError('minlength')">
+            Please Enter more than 8 characters
+        </span>
+    </p>
+    <input type="submit" value="Login">
+</form>

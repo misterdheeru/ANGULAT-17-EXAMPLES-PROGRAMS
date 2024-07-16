@@ -1,0 +1,18 @@
+<h1>SORTED</h1>
+<ng-container  *ngFor="let ele of number1  | sort  ">
+ <b>  {{ele }}  </b>  
+ 
+</ng-container>
+<hr>
+<br>
+
+<h1>UN-SORTED</h1>
+ 
+<ng-container  *ngFor="let ele of number2">
+    <b>  {{ele}}  </b>  
+  
+ </ng-container>
+<br>
+<br>
+<button (click)="number1.push('|',130,150,140,120,110) ">SORT</button> &nbsp;&nbsp;&nbsp;
+<button (click)="number2.push('|',130,150,140,120,110) ">UN-SORT</button>

@@ -1,0 +1,34 @@
+<div class="container mt-4 mb-4">
+    <div class="card">
+        <div class="card-header text-center">
+            <h5>ADD EMPLOYEES</h5>
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                <label for="idInput">ID</label>
+                <input type="number" class="form-control" id="idInput" placeholder="Enter ID" [(ngModel)]="ID">
+            </div>
+            <div class="form-group">
+                <label for="nameInput">Name</label>
+                <input type="text" class="form-control" id="nameInput" placeholder="Enter Name" [(ngModel)]="name">
+            </div>
+            <div class="form-group">
+                <label for="mobileInput">Mobile</label>
+                <input type="number" class="form-control" id="mobileInput" placeholder="Enter Mobile Number" [(ngModel)]="mobile">
+            </div>
+            <div class="form-group">
+                <label for="salaryInput">Salary</label>
+                <input type="number" class="form-control" id="salaryInput" placeholder="Enter Salary" [(ngModel)]="salary">
+            </div>
+            <br>
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <button class="btn btn-primary" type="button" (click)="sendDataToParrent()">POST</button>
+              
+              </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>

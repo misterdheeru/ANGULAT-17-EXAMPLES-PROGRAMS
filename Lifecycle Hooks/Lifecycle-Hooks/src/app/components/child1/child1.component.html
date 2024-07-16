@@ -1,0 +1,30 @@
+ 
+ <style>
+     .content{
+    padding: 4px;
+    margin: 10px;
+    background-color: white;
+  }
+ </style>
+ 
+   <h1>
+      CHILD
+   </h1>
+   <hr style="border: 2px solid black;">
+   <div class="content">
+   <div style="background-color: white; padding: 10px; ">
+      <h3>DATA COMING FROM PARRENT</h3>
+   <input type="text" [(ngModel)]="child1">
+   <br>
+   <br>
+   <h1>DATA COMMING FROM PARRENT</h1>
+   <div *ngFor="let ele of arr">
+         <b>{{ele}}</b>
+   </div>
+   <button (click)="refresh()">Refresh</button>
+
+   </div>
+   </div>
+   
+
+   

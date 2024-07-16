@@ -1,0 +1,20 @@
+<style>
+
+</style>
+
+<div class="container">
+    <div class="login-form">
+        <form  [formGroup]="myform"> 
+           <label>username</label>
+           <br>
+           <input type="text" formControlName="username">
+           <br>
+           <label>password</label>
+           <br>
+           <input type="password" formControlName="password">
+           <br>
+           <br>
+           <button (click)="submit(myform.value)">Login</button>
+        </form>
+    </div>
+</div>

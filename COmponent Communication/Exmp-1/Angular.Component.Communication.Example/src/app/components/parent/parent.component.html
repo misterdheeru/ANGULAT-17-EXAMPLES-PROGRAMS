@@ -1,0 +1,52 @@
+ 
+ <br>
+ <div class="row border">
+   <div class="border">
+    <h1>Parrent</h1>
+
+
+
+    <input type="number" [(ngModel)]="a">
+ 
+   <b> &nbsp;   &nbsp;   &nbsp; a : {{a}}</b>
+
+   <br>
+    <hr>
+   <div class=" col-sm-3 border">
+    <h5>
+      CHILD TO PARRENT 
+    </h5>
+    
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>YEAR</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          {{ID}}
+        </td>
+        <td>
+          {{NAME}}
+        </td>
+        <td>
+          {{YEAR}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+   
+   </div>
+   </div>
+  
+  <div class="col-sm-6 border">
+    <app-child1  [achild1]="a" #childOneData  (NameOfAnEvent)="recivedData($event)"></app-child1>
+  </div>
+  <div class="col-sm-6 border">
+    <app-child2 [bchild]="b"   [achild1]="a"  [DATA]="childOneData" [YearData]="YEAR" ></app-child2>
+  </div>
+ </div>

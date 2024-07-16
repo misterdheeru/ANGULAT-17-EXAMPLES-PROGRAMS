@@ -1,0 +1,48 @@
+<style>
+    .container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 30px;
+    color: rgb(0, 60, 99);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    
+    background-color: rgb(145, 243, 80);
+}
+button{
+ height: 30px;
+ background-color: blue;
+ color: white;
+}
+ input[type="text"] ,input[type="number"]
+ {
+    padding-left: 10px;
+    background-color: rgb(206, 255, 239);
+    border: 2px red solid;
+    color: blue;
+    font-size: larger;
+    font-weight: bold;
+    
+    height: 30px;
+ }
+</style>
+<div class="container">
+     
+ ID : 
+ <br>
+ <input type="number"#id>
+ <br>
+  
+ Name :
+ <br>
+ <input type="text"#name>
+ <br>
+  
+ Salary : 
+ <br>
+ <input type="text"#salary>
+ <br>
+ <br>
+ <button (click)="submit()">Submit</button>
+ </div>

@@ -1,0 +1,107 @@
+ 
+    <style>
+        .container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            background-color: #f0f8ff; /* Light cyan background for a softer look */
+            padding: 30px;
+            justify-content: space-around;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .content {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #008b8b; /* Dark cyan */
+            color: white;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        .container-additems {
+            border: solid black 2px;
+            padding: 50px;
+            max-width: 400px;
+            margin: 20px;
+        }
+        .container-additems input, .container-additems select {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .container-additems input[type="number"] {
+            max-width: 100px;
+        }
+        .container-additems input[type="text"] {
+            max-width: 300px;
+        }
+        select {
+            max-width: 320px;
+        }
+        button {
+            width: calc(100% - 20px);
+            padding: 12px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #008b8b; /* Dark cyan */
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #005f5f; /* Darker cyan for hover effect */
+        }
+        .action-button {
+            width: auto;
+            padding: 8px 12px;
+            margin: 2px;
+            font-size: 14px;
+        }
+        .delete-button {
+            background-color: #ff4d4d; /* Red for delete */
+        }
+        .delete-button:hover {
+            background-color: #cc0000; /* Darker red for hover effect */
+        }
+        .edit-button {
+            background-color: #4caf50; /* Green for edit */
+        }
+        .edit-button:hover {
+            background-color: #357a38; /* Darker green for hover effect */
+        }
+        .empform{
+            text-align: center;
+            color: red;
+        }
+    </style>
+
+<div class="container-additems">
+    <u><h1 class="empform">EMPLOYEE FORM</h1></u>
+    ID : <br><input type="number"  #id><br>
+    Name : <br> <input type="text"  #name><br>
+    Select The Course :
+    <select #item> 
+        <option *ngFor="let emp of courses" [value]="emp.CourseId">{{emp.CourseName}}</option>
+    </select>
+    <br><br>
+    <button (click)="SendData(id,name,item)">Post</button>
+</div>

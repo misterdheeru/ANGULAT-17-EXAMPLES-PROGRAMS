@@ -1,0 +1,46 @@
+
+<style>
+    .container{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+  table{
+  
+  }
+  thead , th , tr{
+    color: white;
+    background-color: green;
+   padding: 20px;
+    
+  }
+  tbody ,tr,td{
+    background-color: cadetblue;
+    color: white;
+    padding: 20px;
+  }
+</style>
+<app-form></app-form>
+ <br>
+ <br>
+ <br>
+  <div class="container">
+    <table >
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>SALARY</th>
+            <th>EMAIL</th>
+         </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{DATA.Id}}</td>
+                <td>{{DATA.Name}}</td>
+                <td>{{DATA.Salary}}</td>
+                <td>{{DATA.Email}}</td>
+            </tr>
+        </tbody>
+     </table>
+  </div>

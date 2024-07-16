@@ -1,0 +1,44 @@
+ 
+<table class="table table-bordered table-striped">
+   <thead class="thead-dark">
+     <tr>
+       <th scope="col">ID</th>
+       <th scope="col">NAME</th>
+       <th scope="col">YEAR</th>   
+       <th scope="col">ACTIONS</th> <!-- Added "ACTIONS" column header -->
+     </tr>
+   </thead>
+   <tbody *ngFor="let data of MoviesList">
+     <tr>
+       <td>{{ data.ID }}</td>
+       <td>{{ data.Name }}</td>
+       <td>{{ data.Year }}</td>
+       <td>
+         <button class="btn btn-primary" (click)="Delete(data.ID)">Delete</button>
+         &nbsp;
+         <button class="btn btn-info">Update</button>
+       </td>
+     </tr>
+   </tbody>
+</table>
+
+<br>
+ <div style="text-align: center;"> 
+ 
+    
+   <app-model>
+    <div class="mb-3">
+      <label for="movieId" class="form-label" >ID</label>
+      <input type="number" class="form-control" id="movieId" #id>
+    </div>
+    <div class="mb-3">
+      <label for="movieName" class="form-label"  >Name</label>
+      <input type="text" class="form-control" id="movieName"#name >
+    </div>
+    <div class="mb-3">
+      <label for="movieYear" class="form-label" #year>Year</label>
+      <input type="number" class="form-control" id="movieYear" #year>
+    </div>
+   </app-model>
+  
+ </div>

@@ -1,0 +1,56 @@
+<style>
+    input.ng-pristine {
+   
+      border:solid 5px red;
+    }
+    input.ng-dirty {
+        border:solid 5px rgb(0, 255, 21);
+    }
+  </style>
+  
+  <div class="container">
+    <div class="row offset-6">
+      <div class="col-sm-4">
+        <form #myForm="ngForm" (ngSubmit)="loginform(myForm)">
+          <p>
+            Name :
+            <input type="text" name="name" #Fname="ngModel" ngModel required minlength="5">
+            <span *ngIf="Fname.hasError('required') && Fname.dirty " class="text-danger">
+             plz Enter Name
+            </span>
+            <span *ngIf="Fname.hasError('minlength') && Fname.dirty " class="text-danger">
+              plz enter more then 5 char
+             </span>
+          </p>
+          <p>
+            Email :
+            <input type="email" name="email" ngModel>
+          </p>
+          <p>
+            Age :
+            <input type="number" name="age" ngModel>
+          </p>
+          <div ngModelGroup="address">
+            <p>
+              Street:
+              <input type="text" name="street" ngModel>
+            </p>
+            <p>
+              Landmark:
+              <input type="text" name="landmark" ngModel>
+            </p>
+            <p>
+              Pin:
+              <input type="text" name="pin" ngModel>
+            </p>
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+        <div>
+          {{myForm.value | json}}
+      
+        </div>
+      </div>
+    </div>
+  </div>
+  

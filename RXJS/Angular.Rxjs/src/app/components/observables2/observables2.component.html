@@ -1,0 +1,26 @@
+
+ 
+
+
+
+<table>
+    <thead>
+      <tr>
+        <th>Employee ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Position Name</th>
+        <th>Position Id</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emp of emp">
+        <td>{{ emp.empId }}</td>
+        <td>{{ emp.FirtstName }}</td>
+        <td>{{ emp.LastName }}</td>
+        <td>{{ emp.positionname }}</td>
+        <td>{{emp.posid}}</td>
+      </tr>
+    </tbody>
+  </table>
+  

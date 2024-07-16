@@ -1,0 +1,46 @@
+ Select Director : 
+ <select  [(ngModel)]="selectValue">
+ 
+        <ng-container *ngFor="let Data of DirectorsListArray ">
+        <option value="{{Data.ID }}" >{{Data.Name}}</option>    
+        </ng-container>
+    
+ </select>
+ 
+ <div *ngIf="selectValue==1">
+   Select  Movie : 
+   <select>
+     
+      <ng-container *ngFor="let Data of RajamouliMoviesList">
+         <option value="{{Data.ID }}" >{{Data.Movie}}</option>  
+      </ng-container>
+     
+   </select> 
+    
+ </div>
+  
+
+ <div *ngIf="selectValue==2" >
+   Select  Movie : 
+   <select>
+     
+      <ng-container *ngFor="let Data of DilRajuMovieList">
+         <option value="{{Data.ID }}" >{{Data.Movie}}</option>    
+         </ng-container>
+      
+   </select> 
+ </div>
+ 
+
+
+ <!-- <select [(ngModel)]="Data" >
+    <option value="0">-select-</option>
+    <option value="1">Telugu</option>
+    <option value="2">Hindi</option>
+    <option value="3">English</option>
+    <option value="4">Tamil</option>
+ </select>
+
+ <div>
+    {{Data}}
+ </div> -->

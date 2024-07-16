@@ -1,0 +1,19 @@
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>COURSE NAME</th>
+        </tr>
+    </thead>
+    <tbody  *ngFor="let emp of users">
+        <tr>
+            <td>{{emp.StdId}}</td>
+            <td>{{emp.StdName}}</td>
+            <td>{{emp.CourseName}}</td>
+        </tr>
+       
+       
+    </tbody>
+</table>

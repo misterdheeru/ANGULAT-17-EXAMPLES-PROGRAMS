@@ -1,0 +1,201 @@
+ 
+    <style>
+        .body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            width: 104%;
+            justify-content: center;
+            align-items: center;
+            height: 128vh;
+            background-color: #f0f0f0;
+        }
+        .container {
+             
+            display: flex;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-container, .table-container {
+            flex: 1;
+            padding: 20px;
+        }
+        .form-container {
+            border-right: 1px solid #ddd;
+        }
+        .form-container dd {
+            margin: 10px 0;
+        }
+        .form-container dd input, .form-container dd select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .form-container dd input[type="radio"] {
+            width: auto;
+            margin-right: 10px;
+        }
+        .form-container button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .form-container button:hover {
+            background-color: #45a049;
+        }
+        table {
+            text-align: center;
+            width: 1px;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        th, td {
+            text-align: center;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            text-align: center;
+            background-color: #f2f2f2;
+        }
+      
+        .delete{
+            background-color: rgb(255, 0, 0);
+            padding: 10px;
+            border-radius: 0px;
+            border-radius: 5px;
+            color: white;
+         
+        }
+        .delete:active{
+          background-color: rgb(129, 3, 3);
+         
+        }
+        .edit{
+            background-color: rgb(43, 215, 0);
+            padding: 10px;
+            border-radius: 0px;
+            border-radius: 5px;
+            color: white;
+            width: 62px;
+         
+        }
+        .edit:active{
+          background-color: rgb(1, 158, 46);
+         
+        }
+        .addrecord{
+            background-color: red;
+            color: white;
+            padding: 10px;
+            width: 100%;
+        }
+        .addrecord:active{
+            background-color: rgb(137, 0, 0);
+        }
+    </style>
+ 
+  <div class="body">
+    <div class="container">
+        <div class="form-container"  >
+            <dd>ID</dd>
+            <dd><input type="number" #id></dd>
+            <dd>First Name</dd>
+            <dd><input type="text" #fname></dd>
+            <dd>Last Name</dd>
+            <dd><input type="text" #sname></dd>
+            <dd>Age</dd>
+            <dd><input type="number" #age></dd>
+            <dd>Mobile</dd>
+            <dd><input type="text" #mob></dd>
+            <dd>Gmail</dd>
+            <dd><input type="email" #email></dd>
+            <dd>Higher Date</dd>
+            <dd><input type="date" #date></dd>
+            <dd>Date Of Birth</dd>
+            <dd><input type="date" #dob></dd>
+            <dd>Salary</dd>
+            <dd><input type="number" #sal></dd>
+            <dd>Gender</dd>
+            <dd>
+                <input type="radio" name="gender" value="Male" #male> Male
+                <input type="radio" name="gender" value="Female" #female> Female
+                <input type="radio" name="gender" value="Other" #other> Other
+            </dd>
+            <dd>Position</dd>
+            <dd>
+                <div>
+                    <select name="" id="" #pos>
+                        <ng-container  *ngFor="let pos of position">
+                            <option value="{{pos.PId}}" [selected]="pos.PId == empobj.PId">{{pos.PName}}</option>
+                        </ng-container>
+                    </select>
+                </div>
+            </dd>
+            <dd>
+                <button  (click)="PostEmployeesInforamtion()" [hidden]="uploadhide">Upload</button>
+
+                <button  (click)="saverecord()" [hidden]="savehide">Save</button>
+            </dd>
+
+         
+        </div>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>FULL NAME</th>
+                        <th>AGE</th>
+                        <th>MOBILE</th>
+                        <th>EMAIL</th>
+                        <th>HIGHER DATE</th>
+                        <th>DATE OF BIRTH</th>
+                        <th>SALARY</th>
+                        <th>GENDER</th>
+                        <th>POSITION NAME</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let emps of emp">
+                    <tr>
+                        <td>{{emps.empId}}</td>
+                        <td>{{emps.FullName()}}</td>
+                        <td>{{emps.Age}}</td>
+                        <td>{{emps.Mobile}}</td>
+                        <td>{{emps.Email}}</td>
+                        <td>{{emps.HigherDate | date :'dd/MM/yyyy'}}</td>
+                        <td>{{emps.DOB | date :'dd/MM/yyyy'}}</td>
+                        <td>{{emps.Salary}}</td>
+                        <td>{{emps.Gender}}</td>
+                        <td>{{emps.PName}}</td>
+                        <td>
+                            <button class="delete" (click)="DeleteEmployeeRecord(emps.empId)">Delete</button>
+                        <br>
+                        <br>
+                            <button class="edit" (click)="EditemployeesInfo(emps.empId)">Edit</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div>
+                <br>
+                <br>
+              <button class="addrecord" [hidden]="addrecord" (click)= "addrecordsearase()">ADD RECORD</button>
+            </div>
+        </div>
+    </div>
+
+  </div>
+     

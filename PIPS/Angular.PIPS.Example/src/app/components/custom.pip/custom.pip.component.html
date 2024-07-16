@@ -1,0 +1,83 @@
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 1.2em;
+        font-family: sans-serif;
+        text-align: left;
+    }
+    thead {
+        background-color: #009879;
+        color: #ffffff;
+    }
+    th, td {
+        padding: 12px 15px;
+        border: 1px solid #dddddd;
+    }
+    
+    img {
+        width: 50px;
+        height: auto;
+    }
+    div {
+            margin: 20px 0;
+            font-size: 1.2em;
+            font-family: sans-serif;
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #dddddd;
+            border-radius: 5px;
+            width: calc(100% - 22px); /* Adjusting width to account for padding and border */
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #ffffff;
+            background-color: #009879;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #007f63;
+        }
+
+</style>
+<div>
+    Search Movie
+    <input type="text" [(ngModel)]="searchText" >
+  
+ </div>
+ <table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Year</th>
+            <th>Image</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let Data of moviesListData | custompip  : searchText "> 
+        <tr>
+            <td>
+                {{Data.Id}}
+            </td>
+            <td>
+                {{Data.Name}}
+            </td>
+            <td>
+                {{Data.Year}}
+            </td>
+            <td>
+                {{Data.img}}
+            </td>
+        </tr>
+    </tbody>
+ </table>
+ <hr>
+
+ 

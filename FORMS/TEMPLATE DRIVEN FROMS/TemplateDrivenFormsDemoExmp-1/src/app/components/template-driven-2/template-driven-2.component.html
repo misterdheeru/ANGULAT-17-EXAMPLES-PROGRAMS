@@ -1,0 +1,49 @@
+<style>
+  .container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  form{
+    background-color: aqua;
+    padding: 40px;
+    width: 11%;
+    font-size: 22px;
+
+  }
+  .data{
+    text-align: center;
+    margin: 41px;
+  }
+</style>
+
+<div class="container">
+    <h1>TEMPLATE DRIVEN FORM</h1>
+  <form #myForm="ngForm"  (submit)="print(myForm.value)">
+    <p>
+      username : <br>
+      <input type="text" name="username"  #fname="ngModel" required minlength="5"  ngModel />
+      <span *ngIf="fname.hasError('required') && fname.dirty" style="color: rgb(255, 255, 255);  padding: 10;font-weight: bold; font-size: 15px; background-color: blue;">
+        Please  Enter
+      </span>
+      <span *ngIf="fname.hasError('minlength') && fname.dirty " style="color: rgb(255, 255, 255);padding: 10; font-weight: bold; font-size: 15px; background-color: blue;">
+       Please Enter More Then 5 Characters
+      </span>
+    </p>
+    <p>
+      password : <br>
+      <input type="password" name="password" ngModel />
+    </p>
+    <input type="submit" value="Login" />
+  </form>
+ 
+</div>
+<div class="data">
+    {{myForm.value|json}}
+ <br>
+ <br>
+First Name : {{fname.value}}
+</div>

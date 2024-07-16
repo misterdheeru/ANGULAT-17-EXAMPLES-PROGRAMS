@@ -1,0 +1,43 @@
+<style>
+  .parrent {
+    text-align: center;
+    background-color: lightblue;
+    margin-bottom: 10px;
+  }
+  .child {
+    text-align: center;
+    background-color: lightgreen;
+  }
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .content {
+    padding: 5px;
+    margin: 10px;
+    background-color: white;
+  }
+</style>
+<div class="container">
+  <div class="parrent">
+    <h1>PARRENT</h1>
+    <hr style="border: 2px solid black" />
+    <div class="content">
+      username : <input type="number" [(ngModel)]="Name" />
+      <br>
+      <br>
+       <h1>ngDoCheck Example</h1>
+      <div *ngFor="let ele of arr">
+        <b>{{ele}}</b>
+      </div>
+      <br>
+
+      <button (click)="arr.push(50)">Add-Item</button>
+    </div>
+  </div>
+  <div class="child">
+    <app-child1 [child1]="Name" [arr]="arr"></app-child1>
+  </div>
+</div>

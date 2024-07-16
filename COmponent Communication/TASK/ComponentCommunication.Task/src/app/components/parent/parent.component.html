@@ -1,0 +1,33 @@
+<div class="container-fluid" style="background-color: lightblue; height: 100vh;">
+    <div class="row m-4">
+        <div class="col-sm-6 border mt-4 p-3 bg-white rounded shadow-sm">
+            <h3 class="text-center">Employee List</h3>
+            <table class="table table-hover table-bordered mt-4 text-center">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">NAME</th>
+                        <th scope="col">MOBILE</th>
+                        <th scope="col">SALARY</th>
+                        <th scope="col">ACTION</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let Data of Employees">
+                    <tr>
+                        <td>{{Data.ID}}</td>
+                        <td>{{Data.Name}}</td>
+                        <td>{{Data.Mobile}}</td>
+                        <td>{{Data.Salary}}</td>
+                        <td><button class="btn btn-danger btn-sm" (click)="Delete(Data.ID)">DELETE</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-sm-6 d-flex align-items-center justify-content-center">
+            <div class="border p-4 bg-white rounded shadow-sm w-100">
+                <h3 class="text-center">Child Component</h3>
+                <app-child-1 (eventemit)="recivedDataFromParrent($event)"></app-child-1>
+            </div>
+        </div>
+    </div>
+</div>

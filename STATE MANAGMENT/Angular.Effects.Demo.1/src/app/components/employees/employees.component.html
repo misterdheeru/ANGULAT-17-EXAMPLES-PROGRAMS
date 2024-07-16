@@ -1,0 +1,41 @@
+ 
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>COURSE NAME</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let Data of emp">
+        <tr>
+            <td>{{Data.StdId}}</td>
+            <td>{{Data.StdName}}</td>
+            <td>{{Data.CourseName}}</td>
+            <td>
+                <button (click)="delete(Data.StdId)">Delete</button>
+                &nbsp;
+                <button>Update</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<br>
+
+
+ ID
+ <br>
+ <input type="number" #id>
+ <br>
+ Name
+ <br>
+ <input type="text" #name>
+ <br>
+ Course ID 
+ <br>
+ <input type="number" #cid>
+<br>
+<br>
+ <button (click)="add()">AddEmp</button>

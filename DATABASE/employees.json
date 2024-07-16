@@ -1,0 +1,34 @@
+{
+  "employees": [
+    {
+      "ID": 1,
+      "FirstName": "John",
+      "LastName": "Doe",
+      "Gmail": "john.doe@gmail.com",
+      "Mobile": 1234567890,
+      "Salary": 50000,
+      "Gender": "Male",
+      "id": "e1"
+    },
+    {
+      "ID": 2,
+      "FirstName": "Jane",
+      "LastName": "Smith",
+      "Gmail": "jane.smith@gmail.com",
+      "Mobile": 2345678901,
+      "Salary": 60000,
+      "Gender": "Female",
+      "id": "e2"
+    },
+    {
+      "ID": 3,
+      "FirstName": "Sara",
+      "LastName": "Connor",
+      "Gmail": "sara.connor@gmail.com",
+      "Mobile": 3456789012,
+      "Salary": 70000,
+      "Gender": "Female",
+      "id": "e3"
+    }
+  ]
+}

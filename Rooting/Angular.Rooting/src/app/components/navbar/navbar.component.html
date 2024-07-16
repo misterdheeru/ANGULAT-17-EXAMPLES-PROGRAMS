@@ -1,0 +1,49 @@
+<style>
+  .navbar {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(72, 109, 255);
+    padding: 10px;
+    margin: 0;
+    list-style-type: none;
+    justify-content: center;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
+  }
+
+  .item {
+ 
+    border-radius: 30px;
+    margin-right: 10px;
+    background-color: aquamarine;
+    font-weight: bold;
+    padding: 10px 20px; /* Add some padding for spacing */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s, color 0.3s; /* Smooth hover transition */
+  }
+
+  .item a {
+    text-decoration: none; /* Remove underline from text */
+    color: rgb(255, 0, 0); /* Set text color */
+    transition: color 0.3s; /* Smooth hover transition for text color */
+  }
+
+  .item:hover {
+    background-color: rgb(255, 255, 255); /* Add hover effect */
+    border-radius: 5px; /* Rounded corners on hover */
+  }
+
+  .item a:hover {
+    color: #4c00ff; /* Change text color on hover */
+  }
+</style>
+
+<div>
+  <ul class="navbar">
+    <li class="item" routerLink="/Home"><a>Home</a></li>
+    <li class="item" routerLink="/About"><a>About</a></li>
+    <li class="item" routerLink="/Contact"><a>Contact</a></li>
+  </ul>
+</div>

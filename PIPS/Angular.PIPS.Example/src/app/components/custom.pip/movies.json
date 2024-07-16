@@ -1,0 +1,32 @@
+[
+    {
+        "Id": 1,
+        "Name": "RRR",
+        "Year": 2022,
+        "img": "https://www.movierulz.dev/uploads/RRR-Hindi.jpg"
+    },
+    {
+        "Id": 2,
+        "Name": "Rangasthalam",
+        "Year": 2018,
+        "img": "https://timesofindia.indiatimes.com/photo/61982709.cms"
+    },
+    {
+        "Id": 3,
+        "Name": "Ala Vaikunthapurramuloo",
+        "Year": 2020,
+        "img": "https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/ala-vaikunthapurramuloo-et00321452-20-01-2022-02-54-58.jpg"
+    },
+    {
+        "Id": 4,
+        "Name": "Baahubali: The Beginning",
+        "Year": 2015,
+        "img": "https://m.media-amazon.com/images/M/MV5BYWVlMjVhZWYtNWViNC00ODFkLTk1MmItYjU1MDY5ZDdhMTU3XkEyXkFqcGdeQXVyODIwMDI1NjM@._V1_FMjpg_UX1000_.jpg"
+    },
+    {
+        "Id": 5,
+        "Name": "Baahubali 2: The Conclusion",
+        "Year": 2017,
+        "img": "https://m.media-amazon.com/images/M/MV5BODY0NTQ0MzctNmNlMi00MWUxLThmNTEtMGFhNjczYmVjYjcxXkEyXkFqcGdeQXVyMTA8NjE0NjEy._V1_.jpg"
+    }
+]

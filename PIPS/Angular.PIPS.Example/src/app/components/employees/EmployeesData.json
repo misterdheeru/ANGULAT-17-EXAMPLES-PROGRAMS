@@ -1,0 +1,114 @@
+[
+    {
+      "id": 1,
+      "name": "John Doe",
+      "position": "Software Engineer",
+      "department": "Development",
+      "email": "john.doe@example.com",
+      "phone": "555-1234",
+      "hireDate": "2021-03-15",
+      "salary": 75000,
+      "gender": "Male"
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "position": "Project Manager",
+      "department": "Management",
+      "email": "jane.smith@example.com",
+      "phone": "555-5678",
+      "hireDate": "2019-06-01",
+      "salary": 90000,
+      "gender": "Female"
+    },
+    {
+      "id": 3,
+      "name": "Alice Johnson",
+      "position": "UX Designer",
+      "department": "Design",
+      "email": "alice.johnson@example.com",
+      "phone": "555-8765",
+      "hireDate": "2020-09-23",
+      "salary": 65000,
+      "gender": "Female"
+    },
+    {
+      "id": 4,
+      "name": "Bob Brown",
+      "position": "DevOps Engineer",
+      "department": "Operations",
+      "email": "bob.brown@example.com",
+      "phone": "555-4321",
+      "hireDate": "2018-11-12",
+      "salary": 80000,
+      "gender": "Male"
+    },
+    {
+      "id": 5,
+      "name": "Emma Davis",
+      "position": "Marketing Specialist",
+      "department": "Marketing",
+      "email": "emma.davis@example.com",
+      "phone": "555-6789",
+      "hireDate": "2022-02-14",
+      "salary": 60000,
+      "gender": "Female"
+    },
+    {
+      "id": 6,
+      "name": "Chris Martin",
+      "position": "Data Scientist",
+      "department": "Analytics",
+      "email": "chris.martin@example.com",
+      "phone": "555-3456",
+      "hireDate": "2017-08-21",
+      "salary": 85000,
+      "gender": "Male"
+    },
+    {
+      "id": 7,
+      "name": "Patricia Johnson",
+      "position": "HR Manager",
+      "department": "Human Resources",
+      "email": "patricia.johnson@example.com",
+      "phone": "555-7890",
+      "hireDate": "2015-01-10",
+      "salary": 70000,
+      "gender": "Female"
+    },
+    {
+      "id": 8,
+      "name": "Michael Wilson",
+      "position": "Sales Executive",
+      "department": "Sales",
+      "email": "michael.wilson@example.com",
+      "phone": "555-2345",
+      "hireDate": "2018-05-17",
+      "salary": 55000,
+      "gender": "Male"
+    },
+    {
+      "id": 9,
+      "name": "Linda Taylor",
+      "position": "Customer Support",
+      "department": "Support",
+      "email": "linda.taylor@example.com",
+      "phone": "555-6543",
+      "hireDate": "2016-10-29",
+      "salary": 45000,
+      "gender": "Female"
+    },
+    {
+      "id": 10,
+      "name": "James Anderson",
+      "position": "Network Administrator",
+      "department": "IT",
+      "email": "james.anderson@example.com",
+      "phone": "555-7654",
+      "hireDate": "2019-02-25",
+      "salary": 72000,
+      "gender": "Male"
+    }
+    
+  ]
+  

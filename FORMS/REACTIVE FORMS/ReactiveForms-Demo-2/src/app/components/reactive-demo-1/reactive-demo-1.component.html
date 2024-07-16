@@ -1,0 +1,56 @@
+<style>
+  .remove {
+    background-color: transparent;
+    border: 0px;
+  }
+  .add {
+    width: 100%;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+</style>
+
+<div class="container">
+  <form [formGroup]="myform">
+    <div formArrayName="mobile">
+      <div
+        *ngFor="let c of myform.controls['mobile']['controls']; let i = index"
+      >
+        Country :
+        <br />
+        <select>
+          <option value="">-select-</option>
+          <option value="+91">India</option>
+          <option value="+92">Pakistan</option>
+          <option value="+1">United States</option>
+          <option value="+44">United Kingdom</option>
+          <option value="+61">Australia</option>
+          <option value="+49">Germany</option>
+          <option value="+33">France</option>
+          <option value="+86">China</option>
+          <option value="+81">Japan</option>
+        </select>
+        <br />
+        <br />
+        Mobile Number {{ i + 1 }}
+        <br />
+        <input type="text" formControlName="{{i}}"/>
+
+        <button class="remove" (click)="remove(i)">❌</button>
+        <!-- windows + . -->
+      </div>
+    </div>
+    <br />
+    <br />
+    <button class="add" (click)="submit(myform)">submit</button>
+    <br>
+    <br>
+    <button class="add" (click)="add()">Add</button>
+  </form>
+</div>

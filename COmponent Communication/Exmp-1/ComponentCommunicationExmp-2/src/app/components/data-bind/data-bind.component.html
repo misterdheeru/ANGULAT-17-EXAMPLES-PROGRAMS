@@ -1,0 +1,58 @@
+<div style="text-align: center; color: rgb(229, 255, 0); background-color: red; padding: 10px; ">
+    <u><h1>COMPONENT COMMUNICATION</h1></u>
+ </div>
+ <br>
+ 
+ <div style="background-color: rgb(255, 216, 239); height: 40vh; padding: 10px; color: red; text-align: center; border: solid 5px black ; border-radius: 10px; ">
+ <h1>
+    PARENT COMPONENT
+ </h1>
+ <b><hr style="border: solid 2px black;"></b>
+
+ <div style="color: blue; font-size: 30px; font-weight: bold;">
+
+   Name : {{Name}}
+   <hr style="border: solid 2px black;">
+
+
+ <div>
+  <u><h2>Gmail And Mobile Data Comming From Child-1 On Button Click</h2></u>
+
+</div>
+ <h1>{{GmailId}}</h1>
+ <h1>MOBILE  : {{Mobile}}</h1>
+</div>
+
+
+  <hr style="border: solid 2px black;">
+ 
+
+
+ </div>
+  <div style="display: flex; flex-wrap: wrap; flex-direction: row; justify-content: center; margin: 10px;">
+    <div style="background-color: rgb(255, 242, 206);  padding: 10px; color: red; text-align: center; border: solid 5px black ; border-radius: 10px; margin-right: 10px;">
+        <div>
+         <h1>
+             CHILD-1 COMPONENT
+         </h1>
+        
+         <b><hr style="border: solid 2px black; font-weight: bold;"></b>
+         <div style="color: blue; font-size: 30px; font-weight: bold;">
+            <app-child1 [NameChild]="Name" #child1Data  (eventemiter)="recivedData($event)" ></app-child1>
+         </div>
+        </div>
+      </div> 
+      <div style="background-color: #a8fce7; padding: 10px; color: red; text-align: center; border: solid 5px black ; border-radius: 10px; ">
+        <div>
+         <h1>
+             CHILD-2 COMPONENT
+         </h1>
+         
+         <b><hr style="border: solid 2px black; "></b>
+         <div style="color: blue; font-size: 30px; font-weight: bold;">
+            <app-child2 [child1Data]="child1Data"   [Mobile]="Mobile"  [NewName]="Name"  [location]="Loc"  ></app-child2>
+         </div>
+        </div>
+      </div> 
+  </div>
+

@@ -1,0 +1,85 @@
+<style>
+    .container {
+
+        height: 100vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+    background-color: lightcyan;
+    }
+
+    .card {
+        width: 900px;
+    box-shadow: 1px 1px 7px 4px gray;
+    background-color: white;
+    }
+
+
+    
+    .body {
+        padding: 30px;
+        height: 500px;
+    }
+
+
+
+    img {
+        float: left;
+    margin: 10px;
+    width: 385px;
+    border: solid 2px gray;
+    padding: -6px;
+    aspect-ratio: 5 / 6;
+    }
+
+    .title {
+        margin-left: 399px;
+        width: 50%;
+    }
+
+    .buynow {
+        width: 23%;
+        padding: 10px;
+        margin: 10px;
+
+    }
+
+    .addtocart {
+        width: 23%;
+        padding: 10px;
+    }
+
+ 
+</style>
+ 
+
+    <div class="container">
+        <div class="card">
+            <div class="header">
+
+            </div>
+            <div class="body">
+                <img  class="img" src="{{productlist.image}}" alt="">
+
+                <div class="title">
+                    <h1> {{productlist.title}}</h1>
+                    <br>
+                    <br>
+                    <h1>{{productlist.price | currency : 'INR'}}</h1>
+                    <br>
+                    <br>
+                    <h1>Product Description</h1>
+                     {{productlist.description}}
+                </div>
+                <button class="buynow">Buy Now</button>
+                <button class="addtocart">Add To Cart</button>
+            </div>
+
+            <div class="footer">
+
+            </div>
+        </div>
+
+    </div>

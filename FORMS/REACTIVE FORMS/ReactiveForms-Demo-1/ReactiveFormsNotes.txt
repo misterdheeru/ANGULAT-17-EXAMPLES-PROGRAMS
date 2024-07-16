@@ -1,0 +1,82 @@
+==============
+REACTIVE FORMS 
+===============
+
+STEP 1 : To create Reactive Froms We Need To Import ReactiveFormsModule
+import { ReactiveFormsModule } from '@angular/forms';
+
+STEP 2 : create formGroup instance and formControl instance  
+by using this formGroup instance we can create form     
+by using this formControl instance we can create form fields [fields are northing but keys {key:value}]
+
+======
+SYNTAX 
+======
+
+loginform = new formGroup({
+   username : new formControl(),
+   password : new formControl()
+})
+
+
+================================
+VALIDATIONS USING REACTIVE FORMS
+================================
+
+=========
+FORMGROUP 
+=========
+
+formGroup =>  By using this form group we can create form instance 
+
+formGroup constructor it is going to take 3 argumments
+
+1 => object it will contain key : value formate
+2 => validations  [if you performing single validatino no need to use square brackets [] , if u are using multiple validations you need to use square brackets []]
+3 => asynvalidations [means validation will be done by server ex : when we create gmaile if it is present in Database it will tell you create give new name ]
+
+new formGroup({key:value},validations,asyvalidations)
+
+===========
+FORMCONTROL
+===========
+
+fprmControl => By using this formcontrol instance we can create fields 
+
+it is also going to take 3 pre define arguments in constructor 
+
+1 => predefingname = if we give any predefingname name in " " string formate it is going to take pirtucular field value name
+2 => validations  [if you performing single validatino no need to use square brackets [] , if u are using multiple validations you need to use square brackets []]
+3 => asynvalidations [means validation will be done by server ex : when we create gmail if it is present in Database it will tell you create give new name ]
+ 
+
+new formController(predefingname , validations , asynvalidations)
+
+ 
+   login = new FormGroup({
+    user: new FormControl('', [Validators.required, Validators.minLength(5)]),
+    pwd: new FormControl('', Validators.required)
+  });
+
+
+ <span *ngIf="login.get('user')?.touched&& login.get('user')?.hasError('required')" style="color: red;">
+         Please Enter Username
+  </span>
+=======================================
+to get particular field control instance  to validate
+
+we need to get  formgroup instance variable name 
+
+here it is login
+
+=> login.get('user') : we are getting particular user filed instance and we are performing operation 
+
+ => .touched :  means when we keep an cursor in field when we move to another field that time 
+ it is going to perform an action 
+
+ => &&  : here we are using and operator means login.get('user') and [means not ended more there ]
+
+ => .hasError('required') => here you give error name  what error it should show
+
+  
+  

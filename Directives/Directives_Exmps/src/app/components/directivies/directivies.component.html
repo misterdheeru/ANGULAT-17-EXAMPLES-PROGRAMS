@@ -1,0 +1,127 @@
+<h1 style="color: red;">ngIf</h1>
+<div>
+    <h1 *ngIf="num1 > num2 ; else elseBlock">{{res}}</h1>
+    <ng-template #elseBlock> <h1><b>NOT EQUAL</b></h1>  </ng-template>
+</div>
+<hr>
+<h1 style="color: red;">ngIf : Using Method Passing</h1>
+
+ <div>
+    <h1 *ngIf="checkIfEqual(num1,num2); else elseBlock">{{ res }}</h1>
+    <ng-template #elseBlock>NOT EQUAL</ng-template>
+</div> 
+<hr>
+<h1 style="color: red;">ngSwitch</h1>
+
+<div [ngSwitch]="x">
+    <h1 *ngSwitchCase="1">Mon</h1>
+    <h1 *ngSwitchCase="2">Tue</h1>
+    <h1 *ngSwitchCase="3">Wed</h1>
+    <h1 *ngSwitchCase="4">Thu</h1>
+    <h1 *ngSwitchCase="5">Fri</h1>
+    <h1 *ngSwitchCase="6">Sat</h1>
+    <h1 *ngSwitchCase="7">Sun</h1>
+    <h1 *ngSwitchDefault>Not Valid Number</h1>
+  </div>
+  <hr>
+  <h1 style="color: red;">ngFor</h1>
+  
+  
+  <div>
+  </div>  
+        <table>
+            <thead>
+              <tr>
+           
+                <th>Index</th>
+                <th>Name</th>
+                <th>Course</th>
+                <th>First</th>
+                <th>Last</th>
+                <th>Even</th>
+                <th>Odd</th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let Data of DATAFINAL ; let i=index ; let f = first; let L = last let e = even ; let o = odd  ; trackBy:EmpTrackBye" >
+              <tr  [ngStyle]="{'background-color': o ? ' #ccccff' : '#e6b3ff'  }">
+                <td>{{ i }}</td>
+                <td>{{ Data.StdId  }}</td>  
+                <td>{{ Data.StdName }}</td>
+                <td>{{ Data.CourseName }}</td>
+                <td>{{ f  }}</td>
+                <td>{{ L }}</td>
+                <td>{{ e }}</td>
+                <td>{{ o }}</td>
+              </tr>
+            </tbody>
+          </table>
+  
+ <hr>
+
+ <div>
+  <h1 *ngIf="flag">*ngIf h1 IS CALLING </h1>
+  <h1 [hidden]="!flag">[hidden] h1 IS CALLING </h1>
+ </div>
+
+ 
+<ul>
+  <li *ngFor="let c of cars"> 
+   
+     <span [ngStyle]="{'background-color':e ?'green':'red' ,'color':'white' } "> 
+      {{c}}
+    </span>
+  
+  </li>
+</ul>
+<hr>
+<h1>DropDownList</h1>
+<br>
+
+ 
+  <select >
+ 
+      <ng-container   *ngFor="let c of cars  ; let i = index">
+    
+      <option value="{{i}}" >
+        {{c}}
+       </option>
+            
+      </ng-container>  
+ 
+  </select>
+
+  
+ 
+ 
+<hr>
+<h1>TrackBy</h1>
+<br>
+<table>
+  <thead>
+    <tr>
+ 
+      <th>Index</th>
+      <th>Name</th>
+      <th>Location</th>
+      <th>Mobile</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let Data of employes ; trackBy:employeesTrackBy " >
+    <tr >
+      <td>{{Data.ID}}</td>
+      <td>{{Data.Name}}</td>
+      <td>{{Data.Location}}</td>
+      <td>{{Data.Mobnumber}}</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+
+<button (click)="Add()" >ADD-EMPLOYEES</button> 
+<hr>
+
+<h1 [ngStyle]="{'color':'red' } ">ng-content</h1>
+ <ng-content></ng-content>
+
+
+ 

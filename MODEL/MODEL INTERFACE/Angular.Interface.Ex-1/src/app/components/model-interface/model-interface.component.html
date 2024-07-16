@@ -1,0 +1,62 @@
+<style>
+    .user-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 18px;
+  text-align: left;
+}
+
+.user-table thead tr {
+  background-color: #009879;
+  color: white;
+  text-align: left;
+  font-weight: bold;
+}
+
+.user-table th, .user-table td {
+  padding: 12px 15px;
+  border: 1px solid #dddddd;
+}
+
+.user-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.user-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.user-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+</style>
+
+<table class="user-table">
+    <thead>
+      <tr>
+        <th>Username</th>
+        <th>First Name</th>
+        <th>Second Name</th>
+        <th>Age</th>
+        <th>Address</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Salary</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let usrs of usersinfor">
+        <td>{{usrs.username}}</td>
+        <td>{{usrs.FirstName}}</td>
+        <td>{{usrs.SecondName}}</td>
+        <td>{{usrs.Age}}</td>
+        <td>{{usrs.Address}}</td>
+        <td>{{usrs.Email}}</td>
+        <td>{{usrs.Password}}</td>
+        <td>{{usrs.salary}}</td>
+      </tr>
+    </tbody>
+  </table>
+  

@@ -1,0 +1,87 @@
+<style>
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: left;
+  }
+
+  table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+  }
+
+  table th,
+  table td {
+    padding: 12px 15px;
+    border: 1px solid #dddddd;
+  }
+
+  table tbody tr {
+    border-bottom: 1px solid #dddddd;
+  }
+
+  table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+  }
+
+  table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+  }
+
+  table tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  button {
+    width: 300px;
+    padding: 5px;
+    margin: 10px;
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(255, 255, 255);
+    background-color: purple;
+    border-radius: 30px;
+    border: solid 5px black;
+      
+
+  }
+  button:hover{
+    cursor: pointer;
+  }
+
+ 
+</style>
+<div class="container">
+  <button (click)="Display()" #btn1>Display</button>
+  <button (click)="Male()" #btn2>Male</button>
+  <button (click)="Female()" #btn3>Female</button>
+</div>
+<br />
+<br />
+<br />
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>NAME</th>
+      <th>GENDER</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let Data of emp">
+    <tr>
+      <td>{{ Data.ID }}</td>
+      <td>{{ Data.Name }}</td>
+      <td>{{ Data.Gender }}</td>
+    </tr>
+  </tbody>
+</table>

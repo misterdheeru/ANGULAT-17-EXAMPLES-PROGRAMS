@@ -1,0 +1,30 @@
+<style>
+    .container{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+         
+         padding: 40px;
+    }
+    .child{
+       margin-left: 900px;
+    }
+</style>
+<div class="container">
+    <div>
+        <h1>ADMIN COMPONENT</h1>
+     
+      <h2>
+        <a  routerLink="/admin/login">Admin Login</a>
+        &nbsp;
+        &nbsp;
+        <a  routerLink="/admin/register"> Admin Register</a>
+      </h2>
+         
+    </div>
+    <div class="child">
+        <h1>  CHILD COMPONENTS </h1>
+        <router-outlet></router-outlet>
+    </div>
+</div>

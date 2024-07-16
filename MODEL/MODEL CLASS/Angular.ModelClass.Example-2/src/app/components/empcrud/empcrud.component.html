@@ -1,0 +1,134 @@
+<style>
+    /* General styles */
+ 
+
+    /* Container styles */
+    .container {
+        max-width: 100%;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Button styles */
+    .btn {
+        background-color: #4CAF50;
+        width: 100%;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+        background-color: #45a049;
+    }
+
+    /* Table styles */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    th, td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    th {
+        text-align: center;
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    tbody tr:nth-child(odd) {
+        background-color: #f2f2f2;
+       
+    }
+   
+    tbody tr:hover {
+        background-color: #ddd;
+    }
+
+    /* Button inside table cell */
+    .action-buttons button {
+        background-color: #2196F3;
+        color: white;
+        border: none;
+        padding: 8px 12px;
+        cursor: pointer;
+        border-radius: 3px;
+        font-size: 14px;
+        transition: background-color 0.3s ease;
+    }
+
+    .action-buttons button:hover {
+        background-color: #0b7dda;
+    }
+  .color{
+    background-color: #449258;
+    color: white ;
+  }
+  .color-id{
+    background-color: #000000;
+    color: white;
+     
+     text-align: center;
+     box-shadow:0px 1px 10px 0px black;
+  }
+</style>
+
+
+<div class="container">
+    <button class="btn" (click)="DisplayEmployeesInformation()">Display Information</button>
+    <div *ngIf="tbldisplay" else elseblock>
+
+    </div>
+    <ng-template #elseblock>
+        <table>
+            <thead>
+                <tr>
+                    <th>AUTO-GENERATE</th>
+                    <th>ID</th>
+                    <th>FULL NAME</th>
+                    <!-- <th>First Name</th>
+                    <th>Last Name</th> -->
+                    <th>Email</th>
+                    <th>Mobile</th>
+                    <th>Salary</th>
+                    <th>Gender</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            
+                <tbody>
+                    <tr *ngFor="let emp of employeesList">
+                        <th class="color">{{emp.id}}</th>
+                        <td class="color-id">{{ emp.ID }}</td>
+                        <td>{{ emp.getFullName()}}</td> 
+                        <!-- <td>{{ emp.FirstName }}</td>
+                        <td>{{ emp.LastName }}</td> -->
+                        <td>{{ emp.Gmail }}</td>
+                        <td>{{ emp.Mobile }}</td>
+                        <td>{{ emp.getTotalSalary() | currency  :'INR'  }}</td>
+                        <td>{{ emp.Gender }}</td>
+                         
+                        <td class="action-buttons">
+                            <button >Delete</button>
+                            &nbsp;
+                            &nbsp;
+                            <button >Edit</button>
+                        </td>
+                    </tr>
+                </tbody>
+
+        </table>
+    </ng-template>
+</div>

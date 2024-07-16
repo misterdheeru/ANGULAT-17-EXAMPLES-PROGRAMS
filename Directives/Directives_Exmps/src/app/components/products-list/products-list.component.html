@@ -1,0 +1,23 @@
+<h1>PRODUCTS-LIST</h1>
+<button class="btn btn-primary" (click)="sortReverse()" >Sort Reverse</button>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3" *ngFor="let Data of DataProducts | paginate:{itemsPerPage:8,currentPage:p}">
+           <div class="card text-center ">   
+            <div class="ratio ratio-1x1">
+                <img src="{{Data.image}}" alt="" class="card-img-top   " height="150">
+            </div>
+             <div class="card-body">
+                <h5 class="card-title">{{Data.category}}</h5>
+                <p class="card-title ">{{Data.title}}</p>
+                <p class="card-title text-truncate">{{Data.description}}</p>
+                <p class="card-title">{{Data.rating.rate}}</p>
+             <a href="#" class="btn btn-primary">View Details</a>         
+             </div>    
+           </div>
+        </div>
+         <div class="offset-4">
+            <pagination-controls (pageChange)="p =$event"></pagination-controls>
+         </div>
+    </div>
+</div>
