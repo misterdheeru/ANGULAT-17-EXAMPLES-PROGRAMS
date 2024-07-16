@@ -1,0 +1,91 @@
+  
+ <style>
+    .card {
+      width: 320px;
+      margin: 10px;
+      height: 400px;
+      box-shadow: 0px 6px 13px 7px #403e3e;
+      padding: 10px;
+      transition: transform 0.3s ease;  /* Add transition for smooth zoom */
+      cursor: pointer;
+    }
+    
+    .card:hover {
+      transform: scale(1.05);  /* Zoom effect */
+    }
+    
+    img {
+      width: 300px;
+    }
+    
+    .containercard {
+      background-color: #c7f3ff;
+      background: linear-gradient(to bottom left, #00bfff 49%, #0303a5 27%);
+      justify-content: center;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    
+     
+    
+    .footer {
+      padding: 0px;
+      margin: 0px;
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    .enroll {
+      width: 50%;
+      height: 37px;
+      border-color: transparent;
+      border-bottom-left-radius: 5px;
+      background-color: blue;
+      color: white;
+    }
+    
+    .enroll:active {
+      background-color: rgb(0, 0, 143);
+    }
+    
+    .share {
+      border-bottom-right-radius: 5px;
+      border-color: transparent;
+      height: 37px;
+      width: 50%;
+      background-color: rgb(255, 0, 0);
+      color: white;
+    }
+    
+    .share:active {
+      background-color: rgb(165, 0, 0);
+    }
+    
+    
+     </style>
+     
+     
+      <div class="containercard">
+       
+        <div class="card" *ngFor="let data of mycourses">
+          <div class="header">
+            <img src="{{data.img}}" alt="">
+          </div>
+          <div class="body">
+            <h4>{{data.Name}}</h4>
+            Start Date : {{data.StartBy}}
+            <br>
+            by : {{data.FACULITYNAME}}
+            <br>
+            Dur : {{data.Dur}}
+          </div>
+          <div class="footer">
+            <button class="enroll">Enroll</button>
+            <button class="share">
+              <fa-icon [icon]="iconshare"></fa-icon> Share</button>
+          </div>
+        </div>
+      </div>
+      
+     
