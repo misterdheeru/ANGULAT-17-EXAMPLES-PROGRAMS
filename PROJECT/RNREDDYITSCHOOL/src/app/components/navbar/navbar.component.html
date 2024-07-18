@@ -1,142 +1,315 @@
 <style>
-  .body {
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
+  * {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-    .logo-content {
-      display: flex;
-      align-items: center;
-      padding: 10px;
-      font-size: 24px;
-      font-weight: bold;
-      padding: 10px;
-      margin-left: 100px;
-    }
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #3e4095;
+    padding: 10px;
+    color: white;
+  }
 
-    .containerfluid {
-      box-shadow: 0px -4px 11px 0px rgba(0, 0, 0, 0.1);
-      padding: 12px;
-      background: linear-gradient(90deg, rgb(255 255 255) 0%, rgb(255 255 255) 100%);
-      color: #333;
-      width: 100%;
-    }
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #3e4095;
+    padding: 10px;
+    color: white;
+  }
 
+  .logo-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    width: 100%;
+    animation: fadeIn 2s ease-in-out;
+  }
+
+  .logo {
+    width: 252px;
+    margin-right: 10px;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .logo-text {
+    font-size: 24px;
+    line-height: 1.2;
+  }
+
+  .nav {
+    box-shadow: -3px 3px 5px 0px black;
+    /* gap: 54px; */
+    display: flex;
+    background-color: #466aff;
+    padding: 10px;
+    width: 100%;
+    align-content: space-around;
+    justify-content: flex-end;
+  }
+
+  .items {
+    display: flex;
+    margin-right: 5%;
+    gap: 64px;
+    font-size: 20px;
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 0;
+  }
+
+  .Active {
+    border-bottom: 3px solid yellow;
+  }
+
+  .fa-icon {
+    font-size: 20px;
+    color: white;
+  }
+
+  @media (max-width: 768px) {
     .nav {
-      width: 100%;
-      display: flex;
-      justify-content: center; /* Center the navigation bar */
-      cursor: pointer;
+      flex-direction: column;
     }
 
-    .nav-items {
-      display: flex;
-      gap: 20px; /* Add space between the navigation links */
-      cursor: pointer;
-    }
-
-    .nav-items a {
-      text-decoration: none;
-      color: #333;
-      font-weight: bold; /* Make the text bold */
-      padding: 10px 20px; /* Add padding to the links */
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s, color 0.3s; /* Smooth background color and text color transition */
-    }
-
-    .nav-items a:hover {
-      background: rgb(107, 225, 255);
-      color: #ffffff; /* Change text color on hover */
-    }
-
-    marquee {
-      background-color: #090ece;
-      padding: 5px;
-      color: white;
-      font-family: Arial, Helvetica, sans-serif;
-      font-weight: bold;
-      cursor: pointer;
-     
+    .items {
+      flex-direction: column;
+      gap: 15px;
     }
 
     a {
-      text-decoration: none;
-      color: rgb(255, 255, 255);
-      cursor: pointer;
+      font-size: 18px;
     }
 
-    .new {
-      height: 41px;
+    .fa-icon {
+      font-size: 18px;
     }
 
-    .logo {
-        width: 100px;
-        margin-right: 10px;
+    .social-media-icons {
+      flex-direction: column;
+      margin-left: 0;
     }
+  }
 
-    .logotext1 {
+  .text-1 {
+    color: #00080e;
+    font-family: fantasy;
+    font-size: 49px;
+  }
 
-        font-family: fantasy;
-    font-weight: bold;
-    font-size: 38px;
-    color: #0e72ff;
-    }
-    .logotext2{
-        color: currentcolor;
-    font-weight: 600;
-    margin-top: 61px;
-    font-size: 20px;
-    font-family: auto;
-    margin-left: -112px;
-    }
-    .icons{
-        margin-left: 50%;
+  .text-2 {
+    margin-left: 85px;
+    font-size: 25px;
+    color: #0079ff;
+    font-family: fantasy;
+  }
+
+  .social-media-icons {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    cursor: pointer;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .iconfb,
+  .iconinsta,
+  .iconYoutube {
+    font-size: 20px;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+  }
+
+  .iconfb {
+    --fa-beat-scale: 2;
+    text-shadow: 0 0 10px blue;
+    color: #0079ff;
+    animation-name: bounce;
+  }
+
+  .iconinsta {
+    color: #d35100;
+    animation-name: spin;
+  }
+
+  .iconYoutube {
+    color: #ff0000;
+    animation-name: shake;
+  }
+
+  .icons-container {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+  }
+
+  @keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+      transform: translateY(0);
     }
-    .items{
-        color: #0e72ff;
-        cursor: pointer;
+    40% {
+      transform: translateY(-30px);
     }
+    60% {
+      transform: translateY(-15px);
+    }
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes shake {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    25%,
+    75% {
+      transform: translateX(-10px);
+    }
+    50% {
+      transform: translateX(10px);
+    }
+  }
+
+  .animateLogo {
+    width: 57px;
+  }
+
+  .add {
+    font-size: 19px;
+    font-weight: bold;
+    background-color: #3c444d;
+    color: white;
+  }
+
+  .AddText {
+    font-family: cursive;
+  }
+  .folllowus {
+    width: 173px;
+    text-align: center;
+    width: 173px;
+    text-align: center;
+    font-family: fantasy;
+    /* background-color: blue; */
+    color: #0034ff;
+    border-radius: 17px;
+    padding: 5px;
+    font-size: 23px;
+  }
+
+  .backgroundicons {
+    text-align: center;
+    justify-content: center;
+    padding: -4px;
+  }
 </style>
 
-<div class="body">
-  <div class="logo-content">
-  
-    <img class="logo" src="https://pbs.twimg.com/profile_images/959671631365881856/53c5ohbP_400x400.jpg" alt="">
-     <span class="logotext1">RN REDDY 
-                     
-                            
-     </span>
-     <br>
-     <br>
-     <span class="logotext2">IT SCHOOL</span>
+<div class="add">
+  <marquee direction="right">
+    <span class="AddText">
+      <a href="#" class="AddText">
+        .NET SUPER 30 JOB GUARANTEE PROGRAM JOIN HERE
+        <img
+          class="animateLogo"
+          src="/assets/Animation - 1721162861315.gif"
+          alt=""
+        />
+        &nbsp; &nbsp; డాట్‌నెట్ సూపర్ 30 జాబ్ గ్యారెంటీ ప్రోగ్రామ్‌లో త్వరగా
+        చేరండి
+        <img
+          class="animateLogo"
+          src="/assets/Animation - 1721162861315.gif"
+          alt=""
+        />
 
-     <div class="icons">
-        <a class="items" href="">insta</a>
-        &nbsp;
-        &nbsp;
-        <a class="items" href="">youtube</a>
-        &nbsp;
-        &nbsp;
-        <a class="items" href="">facebook</a>
-        &nbsp;
-        &nbsp;
-     </div>
+        &nbsp; &nbsp; 
+        डॉटनेट सुपर 30 जॉब गारंटी प्रोग्राम से यहां तेजी से जुड़ें
+        <img
+          class="animateLogo"
+          src="/assets/Animation - 1721162861315.gif"
+          alt=""
+        />
+      </a>
+    </span>
+  </marquee>
 </div>
-  <div class="containerfluid">
-    <div class="nav">
-      <div class="nav-items">
-        <a  href="#">Home</a>
-        <a   href="#">About Me</a>
-        <a   href="#">Contact</a>
-        <a   href="#">Course</a>
-      </div>
+
+<div class="container-fluid">
+  <div class="logo-content">
+    <img class="logo" src="/assets/Logo2.png" alt="" />
+    <div class="social-media-icons">
+      <span class="folllowus"
+        >FOLLOW US
+
+        <div class="backgroundicons">
+          <div class="icons-container">
+            <a routerLink="home" routerLinkActive="Active">
+              <fa-icon class="iconfb" [icon]="faFacebook"></fa-icon>
+            </a>
+            <a routerLink="home" routerLinkActive="Active">
+              <fa-icon class="iconinsta" [icon]="faInstagram"></fa-icon>
+            </a>
+            <a routerLink="home" routerLinkActive="Active">
+              <fa-icon class="iconYoutube" [icon]="faYoutube"></fa-icon>
+            </a>
+          </div>
+        </div>
+      </span>
     </div>
   </div>
 </div>
-<marquee direction="right"><a   href=""> <b> <span>.NET SUPER 30 JOB GUARANTEE PROGRAM</span> </b> <img  class="new" src="../assets/Animation - 1721162861315.gif" alt=""></a></marquee>
+
+<div class="container-fluid">
+  <div class="nav">
+    <div class="items">
+      <a routerLink="home" routerLinkActive="Active">
+        <fa-icon class="fa-icon" [icon]="faHouse"></fa-icon>
+        Home
+      </a>
+      <a routerLink="aboutus" routerLinkActive="Active">
+        <fa-icon class="fa-icon" [icon]="faBook"></fa-icon>
+        About Us
+      </a>
+      <a routerLink="contactus" routerLinkActive="Active">
+        <fa-icon class="fa-icon" [icon]="faAddressBook"></fa-icon>
+        Contact Us
+      </a>
+      <a routerLink="career" routerLinkActive="Active">
+        <fa-icon class="fa-icon" [icon]="faMagnifyingGlassMinus"></fa-icon>
+        Course
+      </a>
+    </div>
+  </div>
+</div>
