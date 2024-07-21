@@ -1,0 +1,127 @@
+
+/* General Styles */
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 20px;
+background-color: #000000;
+}
+
+.container {
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+gap: 20px;
+}
+
+table {
+width: 60%;
+border-collapse: collapse;
+background-color: #fff;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+thead {
+background-color: #007bff;
+color: #fff;
+}
+
+th, td {
+padding: 12px 15px;
+border: 1px solid #ddd;
+text-align: left;
+}
+
+th {
+font-weight: bold;
+}
+
+tbody tr:nth-child(even) {
+background-color: #f9f9f9;
+}
+
+button {
+width: 100%;
+padding: 8px 12px;
+margin-right: 5px;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+
+button:hover {
+background-color: #007bff;
+color: #fff;
+}
+
+button:focus {
+outline: none;
+}
+
+button:active {
+transform: scale(0.98);
+}
+
+.content {
+width: 35%;
+background-color: #fff;
+padding: 20px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+border-radius: 5px;
+}
+
+input, select {
+width: calc(100% - 22px);
+padding: 8px;
+margin-bottom: 10px;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+}
+
+input:focus, select:focus {
+border-color: #007bff;
+}
+
+.content button {
+width: 100%;
+background-color: #28a745;
+color: #fff;
+}
+
+.content button:hover {
+background-color: #218838;
+}
+
+.content button:active {
+transform: scale(0.98);
+}
+
+.content label {
+font-weight: bold;
+}
+img{
+height: 150px;
+position: relative;
+left: 300px;
+top: 110px;
+
+}
+.AddButton{
+
+color: black;
+width: 100%;
+}
+
+.container-one{
+
+height: 100vh;
+padding: 30px;
+margin: 0px;
+}
+h1{
+text-align: center;
+font-family:Arial, Helvetica, sans-serif;
+font-size: 40px;
+color: red;
+}

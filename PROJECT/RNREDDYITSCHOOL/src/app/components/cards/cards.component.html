@@ -1,93 +1,136 @@
-  
  <style>
-    .card {
-      width: 320px;
-      margin: 10px;
-      height: 400px;
-      box-shadow: 0px 6px 13px 7px #403e3e;
-      padding: 10px;
-      transition: transform 0.3s ease;  /* Add transition for smooth zoom */
-      cursor: pointer;
+  @keyframes backInUp {
+    0% {
+      transform: translateY(2000px) scale(0.7);
+      opacity: 0.7;
     }
-    
-    .card:hover {
-      transform: scale(1.05);  /* Zoom effect */
+    80% {
+      transform: translateY(0px) scale(0.7);
+      opacity: 0.7;
     }
-    
-    img {
-      width: 300px;
+    100% {
+      transform: scale(1);
+      opacity: 1;
     }
-    
-    .containercard {
- 
-       
-      justify-content: center;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
+  }
+
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
     }
-    
-     
-    
-    .footer {
-      padding: 0px;
-      margin: 0px;
-      display: flex;
-      justify-content: space-between;
+    50% {
+      background-position: 100% 50%;
     }
-    
-    .enroll {
-      width: 50%;
-      height: 37px;
-      border-color: transparent;
-      border-bottom-left-radius: 5px;
-      background-color: blue;
-      color: white;
+    100% {
+      background-position: 0% 50%;
     }
-    
-    .enroll:active {
-      background-color: rgb(0, 0, 143);
-    }
-    
-    .share {
-      border-bottom-right-radius: 5px;
-      border-color: transparent;
-      height: 37px;
-      width: 50%;
-      background-color: rgb(255, 0, 0);
-      color: white;
-    }
-    
-    .share:active {
-      background-color: rgb(165, 0, 0);
-    }
-    
-    
+  }
+
+  .card {
+    width: 320px;
+    margin: 10px;
+    height: 400px;
+    box-shadow: 0px 6px 13px 7px #403e3e;
+    padding: 10px;
+  
+    cursor: pointer;
+
+  }
+  
+  .card:hover {
+    transform: scale(1.05);  /* Zoom effect */
+  }
+  
+  img {
+    width: 300px;
+  }
+  
+  .containercard {
+    padding: 10px;
+    background: linear-gradient(90deg, #ff3535, #66ff00);
+    background-size: 200% 200%;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .footer {
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .enroll {
+    width: 50%;
+    height: 37px;
+    border-color: transparent;
+    border-bottom-left-radius: 5px;
+    background-color: blue;
+    color: white;
+    transition: background-color 0.3s ease;
+  }
+  
+  .enroll:active {
+    background-color: rgb(0, 0, 143);
+  }
+  
+  .enroll:hover {
+    background-color: darkblue;
+  }
+  
+  .share {
+    border-bottom-right-radius: 5px;
+    border-color: transparent;
+    height: 37px;
+    width: 50%;
+    background-color: rgb(255, 0, 0);
+    color: white;
+    transition: background-color 0.3s ease;
+  }
+  
+  .share:active {
+    background-color: rgb(165, 0, 0);
+  }
+  
+  .share:hover {
+    background-color: darkred;
+  }
+  
+  .header {
+    text-align: center;
+  }
+  
+  .body {
+    text-align: left;
+    margin-top: 10px;
+  }
+  
+  .body h4 {
+    margin: 0;
+  }
      </style>
      
      
-      <div class="containercard">
-       
- 
-
-        <div class="card" *ngFor="let data of mycourses">
-          <div class="header">
-            <img src="{{data.img}}" alt="">
-          </div>
-          <div class="body">
-            <h4>{{data.Name}}</h4>
-            Start Date : {{data.StartBy}}
-            <br>
-            by : {{data.FACULITYNAME}}
-            <br>
-            Dur : {{data.Dur}}
-          </div>
-          <div class="footer">
-            <button class="enroll">Enroll</button>
-            <button class="share">
-              <fa-icon [icon]="iconshare"></fa-icon> Share</button>
-          </div>
+     <div class="containercard">
+      <div class="card animate__animated animate__flipInY" *ngFor="let data of mycourses">
+        <div class="header">
+          <img src="{{data.img}}" alt="">
+        </div>
+        <div class="body">
+          <h4>{{data.Name}}</h4>
+          Start Date : {{data.StartBy}}
+          <br>
+          by : {{data.FACULITYNAME}}
+          <br>
+          Dur : {{data.Dur}}
+        </div>
+        <div class="footer">
+          <button class="enroll">Enroll</button>
+          <button class="share">
+            <fa-icon [icon]="iconshare"></fa-icon> Share
+          </button>
         </div>
       </div>
-      
-     
+    </div>

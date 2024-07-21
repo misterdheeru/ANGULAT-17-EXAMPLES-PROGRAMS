@@ -30,23 +30,15 @@
     align-items: center;
     padding: 8px;
     width: 100%;
-    animation: fadeIn 2s ease-in-out;
+
   }
 
   .logo {
     width: 252px;
     margin-right: 10px;
-    animation: pulse 2s infinite;
+
   }
 
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
 
   .logo-text {
     font-size: 24px;
@@ -267,7 +259,7 @@
 </div>
 
 <div class="container-fluid">
-  <div class="logo-content">
+  <div class="logo-content animate__animated  animate__fadeInDown">
     <img class="logo" src="/assets/Logo2.png" alt="" />
     <div class="social-media-icons">
       <span class="folllowus"
@@ -309,6 +301,14 @@
       <a routerLink="career" routerLinkActive="Active">
         <fa-icon class="fa-icon" [icon]="faMagnifyingGlassMinus"></fa-icon>
         Course
+      </a>
+      <a routerLink="career" routerLinkActive="Active">
+        <!-- <fa-icon class="fa-icon" [icon]=""></fa-icon> -->
+        Login
+      </a>
+      <a routerLink="career" routerLinkActive="Active">
+        <!-- <fa-icon class="fa-icon" [icon]=""></fa-icon> -->
+        Signup
       </a>
     </div>
   </div>
