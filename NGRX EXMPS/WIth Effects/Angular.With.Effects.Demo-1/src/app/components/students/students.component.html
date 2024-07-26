@@ -1,0 +1,81 @@
+<style>
+  thead,
+  tbody {
+    text-align: center;
+  }
+  .wid{
+    width: 420px;
+  }
+</style>
+<div class="container">
+  <br />
+  <br />
+  <h1 style="text-align: center">STUDENTS RECORD</h1>
+  <br />
+  <br />
+  <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    Add Students 
+  </button>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Course</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let Data of StudentsList">
+      <tr>
+        <td>
+          {{ Data.StdId }}
+        </td>
+        <td>
+          {{ Data.StdName }}
+        </td>
+        <td>
+          {{ Data.CourseName }}
+        </td>
+        <td>
+          &nbsp;&nbsp;
+          <button class="btn btn-danger" (click)="DeleteStd(Data.StdId)">
+            Delete
+          </button>
+          &nbsp; &nbsp;
+          <button class="btn btn-primary">Update</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="container-fluid    p-4">
+  <div class="container">
+ 
+ 
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">ADD RECORS</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="w-100">
+              <dd>ID</dd>
+           <dd><input  class="w-100 border-light px-2" type="number" #ID></dd>
+           <dd>NAME</dd>
+           <dd><input class="w-100 px-2 border-light" type="text"   #NAME></dd>
+           <dd>COURSE</dd>
+           <dd><input class="w-100 px-2 border-light" type="number"   #COURSE></dd>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button  (click)="AddStudent()" type="button" class="btn btn-primary">submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>

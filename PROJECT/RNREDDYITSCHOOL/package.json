@@ -24,6 +24,8 @@
     "@fortawesome/angular-fontawesome": "^0.15.0",
     "@fortawesome/free-brands-svg-icons": "^6.6.0",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
+    "@ngrx/effects": "^17.2.0",
+    "@ngrx/store": "^17.2.0",
     "animate.css": "^4.1.1",
     "bootstrap": "^5.3.3",
     "express": "^4.18.2",

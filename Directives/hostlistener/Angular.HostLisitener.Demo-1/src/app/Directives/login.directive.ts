@@ -11,10 +11,9 @@ export class LoginDirective implements AfterViewInit, OnDestroy {
   constructor(private el: ElementRef, private renderer: Renderer2) {}
 
   ngAfterViewInit() {
-    const button = this.el.nativeElement.querySelector('button');
-    if (button) {
+    
       this.buttonClickListener = this.renderer.listen("window", 'scroll', () => this.onButtonClick());
-    }
+ 
   }
 
   onButtonClick() {
@@ -27,8 +26,10 @@ export class LoginDirective implements AfterViewInit, OnDestroy {
 
     const textp2 = element.getElementsByClassName('two');
     for (let i = 0; i < textp2.length; i++) {
-      this.renderer.addClass(textp2[i], 'animated');
-  
+      setTimeout(() => {
+        this.renderer.addClass(textp2[i], 'animate__animated');
+        this.renderer.addClass(textp2[i],  'animate__backInLeft');
+      }, 1000);
     }
 
     console.log('Button clicked');

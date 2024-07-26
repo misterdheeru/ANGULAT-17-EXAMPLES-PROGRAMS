@@ -113,8 +113,8 @@
      </style>
      
      
-     <div class="containercard">
-      <div class="card animate__animated animate__flipInY" *ngFor="let data of mycourses">
+     <div class="containercard" appCardsAnimation>
+      <div class="card" [hidden]="false" *ngFor="let data of myCourses">
         <div class="header">
           <img src="{{data.img}}" alt="">
         </div>
