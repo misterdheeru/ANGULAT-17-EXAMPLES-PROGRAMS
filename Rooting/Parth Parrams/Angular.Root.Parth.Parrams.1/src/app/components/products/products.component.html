@@ -1,0 +1,32 @@
+<div
+  class="cards"
+  style="
+    text-align: center;
+    overflow: auto;
+    margin-left: 10px;
+    background-color: rgb(255, 255, 255);
+    min-width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    
+    
+  "
+>
+  <div
+    *ngFor="let Data of products"
+    style="background-color: rgb(8, 0, 255); margin: 10px;    "
+  >
+    <div>
+      <img
+        src="{{ Data.image }}"
+        alt=""
+        style="width: 100px; aspect-ratio: 1; margin: 10px"
+      />
+       
+    </div>
+    <br />
+    <button [routerLink]="['singleitem',Data.id]"  style=" cursor: pointer; padding: 5px; width: 100%; background-color: rgb(226, 251, 0); color: rgb(0, 0, 0);">view</button>
+  </div>
+</div>

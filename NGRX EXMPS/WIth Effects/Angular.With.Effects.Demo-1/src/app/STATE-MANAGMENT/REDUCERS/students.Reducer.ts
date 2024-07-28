@@ -1,6 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
 import { STUDENTSMODEL } from '../../Models/students.Model';
-import { addStudent, deleteStudent, setStudents } from '../ACTIONS/students.Actions';
+import { addStudent, deleteStudent, setStudents, singleStudent } from '../ACTIONS/students.Actions';
 
 /*
 * Here this interface contains Array of students : STUDENTSMODEL  as List Formate 
@@ -60,12 +60,19 @@ export const STUDENTSREDUSER = createReducer(
   /**
    * ...state, : Here Privious State is Comming 
    * students:[DATA.STUDENT] : Here Data is comming from Db as a {key:value} fomate and storing into Students array
-   *Ekada em ithudhi antee Data as a responce ga vasuthudhi  oka object formate lo male adata array lo store ithuidhi 
+   *Ekada em ithudhi antee Data as a response ga vasuthudhi  oka object formate lo male a data student array lo store ithuidhi 
    */
   on(addStudent,(state,DATA)=>{
     return {
          ...state,
            students:[DATA.STUDENT]
     }
-  })
+  }),
+  on(singleStudent,(state,DATA)=>{
+    return{
+      ...state , 
+       studentsSingle:[DATA.STUDENTID]
+    }
+  }),
+  
 );

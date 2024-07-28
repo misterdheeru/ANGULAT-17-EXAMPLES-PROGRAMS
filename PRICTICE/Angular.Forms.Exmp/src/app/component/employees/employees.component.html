@@ -1,0 +1,71 @@
+<div class="container">
+    <form [formGroup]="myForm">
+      <div>
+        <dd>
+            <label>First Name</label>
+        </dd>
+        <dd>
+            <input type="text"  formControlName="firstName">
+            <br>
+            <span *ngIf="myForm.get('firstName')?.touched && myForm.get('firstName')?.hasError('required')" style="color: rgb(255, 255, 255); font-weight: bold; font-family: Arial, Helvetica, sans-serif;
+           font-size: 10px;  background-color: rgb(255, 0, 0); padding: 2px; border-radius: 10px;">
+              Please Add First Name
+            </span>
+        </dd>
+        <dd>
+            <label>Last Name </label>
+        </dd>
+        <dd>
+            <input type="text" formControlName="lastName">
+            <br>
+            <span *ngIf="myForm.get('lastName')?.touched && myForm.get('lastName')?.hasError('required')" style="color: rgb(255, 255, 255); font-weight: bold; font-family: Arial, Helvetica, sans-serif;
+            font-size: 10px; background-color: hsl(0, 100%, 50%); padding: 2px; border-radius: 10px;">
+              Please Add Last Name
+            </span>
+        </dd>
+        <dd>
+            <label >age</label>
+        </dd>
+        <dd>
+            <input type="text" formControlName="age">
+        </dd>
+        <dd>
+            <label>Date of Birth</label>
+        </dd>
+        <dd>
+            <input type="date" formControlName="dob">
+
+        </dd>
+        <dd>
+            <label>Email</label>
+        </dd>
+        <dd>
+            <input type="text" formControlName="email">
+        </dd>
+        <dd>
+            <label>password</label>
+        </dd>
+        <dd>
+            <input type="password"  formControlName="password">
+        </dd>
+        <dd>
+   
+            <input type="radio" formControlName="gender"  value="male" >
+            <label>Male</label>
+          
+            <input type="radio" formControlName="gender"  value="female"  >
+            <label>Female</label>
+          
+            <input type="radio" formControlName="gender"  value="Other" >
+            <label>Other</label>
+
+        </dd>
+        <dd>
+            <br>
+ 
+            <button (click)="gpsubmit(myForm)">submit</button>
+        </dd>
+      </div>
+ 
+    </form>
+</div>

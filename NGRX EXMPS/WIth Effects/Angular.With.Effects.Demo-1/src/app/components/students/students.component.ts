@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, ViewChild, viewChild } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { addStudent, deleteStudent, getStudents } from '../../STATE-MANAGMENT/ACTIONS/students.Actions';
+import { addStudent, deleteStudent, getStudents, singleStudent } from '../../STATE-MANAGMENT/ACTIONS/students.Actions';
 import { STUDENTSMODEL } from '../../Models/students.Model';
 
 @Component({
@@ -51,5 +51,10 @@ export class StudentsComponent implements OnInit {
   DeleteStd(stdNo:any)
   {
    this.store.dispatch(deleteStudent({STUDENTID:stdNo}))
+  }
+
+  Update(Stdid:any)
+  {
+    this.store.dispatch(singleStudent({STUDENTID:Stdid}))
   }
 }

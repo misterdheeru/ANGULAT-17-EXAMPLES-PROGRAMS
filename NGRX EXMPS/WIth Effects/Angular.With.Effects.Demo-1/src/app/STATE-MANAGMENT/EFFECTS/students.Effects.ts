@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
-import { addStudent, deleteStudent, getStudents, setStudents } from "../ACTIONS/students.Actions";
+import { addStudent, deleteStudent, getStudents, setStudents, singleStudent } from "../ACTIONS/students.Actions";
 import { map, mergeMap } from "rxjs";
 import { StudentService } from "../../Services/student.service";
 
@@ -46,5 +46,17 @@ export class STUDENTSEFFECT
             map(()=>getStudents())
         ))
     ))
+ 
+    
+    
+    UpdateStudents = createEffect(()=>this.actions.pipe(
+        ofType(singleStudent),
+        mergeMap((action)=>this.service.getSingleStudent(action.STUDENTID).pipe(
+            map(()=>singleStudent({STUDENTID:action.STUDENTID})
+        ))
+    )))
+    
+    
+
 
 }
