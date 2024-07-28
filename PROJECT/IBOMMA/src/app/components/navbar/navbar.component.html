@@ -1,9 +1,10 @@
- <style>
-  a{
-    margin-left: 2%;
-    text-decoration: none;
-    color: white;
+<style>
+  .yellow{
+    background-color: yellow;
+    height: 10px;
   }
+
+ 
   .containercolor{
         background-color: rgb(7 7 7 / -93%);
      }
@@ -40,7 +41,7 @@
    
  }
  .colr{
-   color: white;
+    background-color: yellow;
  }
  .btn-yellow{
    background-color: yellow;
@@ -57,68 +58,73 @@
  .fade{
    background-color: rgba(255, 247, 3, 0.8);
  }
+ .txtcolor{
+  color: white;
+ }
+ a{
+  text-decoration: none;
+ }
+  
  
+</style>
  
- </style>
+ <div class="container-fluid yellow">
 
- <div class="container-fluid colorsd">
  </div>
-    <div class="container-fluid containerfluid ">
-        <div class="container containercolor ">
-            <div class="row ">
-                <div class="col  p-4">
-                    <img style="width: 128px;" src="https://ibommaone.in/wp-content/uploads/2023/05/logo.png" alt="">
-                </div>
-                <div class=" col-7 col-xxl-6    pad">
-                  
-                    <a routerLink="">Home</a>
-                    <a routerLink="about">About</a>
-                    <a routerLink="bug">Bug</a>
-                    <a type="button" class="colr" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Admin-Login </a>
-                    
-                    <div class="modal fade  " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                      <div class="modal-dialog modal-dialog-centered w-25   ">
-                        <div class="modal-content bg-dark text-light">
-                          <div class="modal-header">
-                            <div class="row">
-                              <div class="col align-content-center">
-                                 <img style="width: 80px;" src="https://ibommaone.in/wp-content/uploads/2023/05/logo.png" alt="">
-                            
-                              </div>
-                              <div class="col-12">
-                                 Admin Login
-                              </div>
-                            </div>
-                            <button  type="button" class="btn-close bg-light buttonh " data-bs-dismiss="modal" aria-label="Close"></button>
-                          </div>
-                          <div class="modal-body">
-                            <form>
-                              <div class="mb-3">
-                                <label for="recipient-name" class="col-form-label">username:</label>
-                                <input type="text" class="form-control" id="recipient-name">
-                              </div>
-                              <div class="mb-3">
-                                <label for="message-text" class="col-form-label">password:</label>
-                                <input type="password" class="form-control" id="recipient-name">
-                              </div>
-                               <br>
-                            
-                              <button type="button" class="btn-yellow">Login</button>
-                            </form>
-                          </div>
-                         
-                        </div>
-                      </div>
-                    </div>
-                    &nbsp;
-                    &nbsp; 
-                    &nbsp;
-                    &nbsp;
-                    &nbsp;
-                  <input placeholder="search..." type="text" class="inputtext">
-                  <button class="search">search</button>
-                </div>
-            </div>
+ 
+<div class="container-fluid  containerfluid">
+  <div class="container containercolor">
+    <nav class="navbar  ">
+ 
+        <a class="navbar-brand" href="#"> 
+          <img style="width: 128px;" src="https://ibommaone.in/wp-content/uploads/2023/05/logo.png" alt="">
+        </a>
+        
+        <button class="navbar-toggler colr" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          
+        </button>
+        <div class="offcanvas offcanvas-end bg-dark " tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header txtcolor">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+              <img style="width: 100px;" src="https://ibommaone.in/wp-content/uploads/2023/05/logo.png" alt="">
+            </h5>
+            
+            <button type="button " class="btn-close colr" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body txtcolor">
+             
+                <a routerLink="" class="txtcolor">Home</a> 
+                <br>
+                <br>
+                  <a routerLink="about" class="txtcolor">About</a> 
+                  <br>
+                  <br>
+                <a routerLink="bug" class="txtcolor">Bug</a> 
+                <br>
+                <br>
+   
+                <a routerLink="adminlogin" class="txtcolor">Admin-Login</a> 
+                <br>
+            
+
+
+
+
+
+
+
+                
+               <br>
+            <form class="d-flex mt-3" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+           
+          </div>
         </div>
-    </div>
+       
+    </nav>
+  </div>
+ </div>
  
