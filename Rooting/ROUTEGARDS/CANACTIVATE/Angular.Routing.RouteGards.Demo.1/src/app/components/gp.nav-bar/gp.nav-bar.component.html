@@ -1,0 +1,42 @@
+<style>
+  .items,
+  a {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 10px;
+    gap: 10px;
+    text-decoration: none;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+  }
+  a:hover {
+    border: 0px;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    border-radius: 8px;
+    box-shadow: 0px 0px 9px 1px black;
+  }
+  .container-fluid{
+    background-color: #00174b;
+  }
+  .container{
+    display: flex;
+    justify-content: flex-end;
+    background-color: #00174b;
+  }
+</style>
+
+<div class="container-fluid  text-light">
+  <div class="container ">
+    <div class="nav">
+      <div class="items">
+        <a routerLink="home">Home</a>
+        <a routerLink="about">About</a>
+        <a routerLink="contact">Contact</a>
+        <a routerLink="carts">Carts</a>
+      </div>
+    </div>
+  </div>
+</div>

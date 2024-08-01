@@ -1,0 +1,46 @@
+
+<style>
+    ul{
+     list-style-type: none;
+    }
+    li{
+     margin: 10px;
+     padding: 10px;
+     font-weight: bold;
+     color: black;
+     width: 40%;
+     text-align: center;
+     border-radius: 5px;
+     cursor: pointer;
+    }
+    li:hover{
+        background-color: lightblue;
+        
+    }
+    a{
+        text-decoration: none;
+    }
+     
+</style>
+<div class="container-fluid ">
+    <div class="container bg-primary-subtle">
+        <div class="data p-4">
+             <span class="text-danger"><h1>CHILD ROUTING</h1></span>
+              <div class="row">
+                <div class="col">
+                    <ul>
+                        <li><a routerLink="/home/dotnet">.NET</a></li>
+                        <li><a routerLink="/home/java">JAVA</a></li>
+                        <li><a routerLink="/home/datascience">DATA SCIENCE</a></li>
+                        <li><a routerLink="/home/python">PYTHON</a></li>
+                        
+                     </ul>
+                </div>
+                <div class="col-8 bg-primary text-light p-4 ">
+                <router-outlet></router-outlet>
+                </div>
+              </div>
+
+        </div>
+    </div>
+</div> 

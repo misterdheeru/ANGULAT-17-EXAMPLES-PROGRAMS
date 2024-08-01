@@ -1,0 +1,38 @@
+<style>
+  .contentinfo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  button {
+    background-color: yellow;
+    color: black;
+    font-weight: bold;
+    margin: 10px;
+    height: 30px;
+  }
+  button:active {
+    background-color: rgb(255, 6, 6);
+    box-shadow: 2px 3px 0px 0px black;
+    color: white;
+  }
+</style>
+<div class="contentinfo">
+  <h1>.NET FRAMEWORK</h1>
+  <button (click)="gp_btb_Click()">syllabus</button>
+</div>
+<div>
+  <router-outlet></router-outlet>
+  <p [hidden]="phide">
+    .NET Framework is designed to: Provide a consistent programming environment,
+    Minimize software deployment and versioning conflicts, Promote safe code
+    execution, Eliminate performance problems, and Make the developer experience
+    consistent across different types of apps. .NET Framework includes a common
+    language runtime that provides memory management and other system services,
+    and a class library that gives programmers access to reliable code for app
+    development. It's included in many versions of Windows and is automatically
+    updated by Windows Update. However, Microsoft recommends using .NET 6 or
+    later for new development because these newer versions are cross-platform,
+    support more application types, and offer high performance.
+  </p>
+</div>
