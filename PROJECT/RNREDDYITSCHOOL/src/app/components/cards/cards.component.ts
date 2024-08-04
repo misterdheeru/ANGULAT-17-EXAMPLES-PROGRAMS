@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { CardsAnimationDirective } from '../../Directives/cards-animation.directive';
 import { courses } from '../../MODELS/cards.Model';
 import { Store } from '@ngrx/store';
+import * as AOS from 'aos';
 @Component({
   selector: 'app-cards',
   standalone: true,
@@ -15,6 +16,7 @@ import { Store } from '@ngrx/store';
 })
 export class CardsComponent implements OnInit {
 
+  
 
   myCourses :courses[] =[]
 
@@ -27,6 +29,8 @@ export class CardsComponent implements OnInit {
 
   ngOnInit(): void {
        
+    AOS.init()
+    window.addEventListener('load',AOS.refresh)
     this.store.select("COURSES").subscribe(res=>{
       this.myCourses = res.courses
     })
